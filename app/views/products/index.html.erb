@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">
+        Оборудование для киосков
+      </h3>
+
+      <%= form_tag('/search', remote: true, class:"form-horizontal") do %>
+          <div class="form-group">
+            <div class="col-sm-6 col-sm-offset-2">
+              <%= text_field_tag :search, params[:search], required: true, class: 'form-control' %>
+            </div>
+            <div class="col-sm-4">
+              <%= submit_tag 'Search', :name => nil, class:'btn btn-default' %>
+            </div>
+          </div>
+    <% end %>
+    </div>
+  </div>
+
+  <%= render partial: 'products', locals:{ products: @products } %>
+</div>

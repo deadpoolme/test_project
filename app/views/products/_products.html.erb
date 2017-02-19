@@ -1,0 +1,18 @@
+<div class="row" id="items">
+  <% products.each do |product| %>
+      <div class="col-md-3">
+        <h2>
+          <%= product.name %>
+          <%= %>
+        </h2>
+
+        <p>
+          <%= product.description %>
+        </p>
+
+        <p>
+          <a class="btn" href="#"><strong><%= product.company.name %></strong></a>
+        </p>
+      </div>
+  <% end %>
+</div>
