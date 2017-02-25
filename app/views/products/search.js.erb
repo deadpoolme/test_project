@@ -1,2 +1,6 @@
-$('#items').html('<%= escape_javascript(render partial: 'products', locals:{ products: @products }) %>');
-$('#items').show();
+<% if @products.present? %>
+$('#items').html('<%= j render partial: 'products', locals:{ products: @products } %>');
+<% else %>
+$("#flash").html('<%= j render partial: "shared/flash_messages" %>');
+$(".alert" ).fadeOut(3000);
+<% end %>
