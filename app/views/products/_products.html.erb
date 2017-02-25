@@ -3,7 +3,6 @@
       <div class="col-md-3">
         <h2>
           <%= product.name %>
-          <%= %>
         </h2>
 
         <p>
@@ -13,6 +12,21 @@
         <p>
           <a class="btn" href="#"><strong><%= product.company.name %></strong></a>
         </p>
+
+        <span>Product:</span>
+        <% if product.active? %>
+          <span class="label label-success">active</span>
+        <% else %>
+          <span class="label label-danger">not active</span>
+        <% end %> </br>
+
+        <span>Company: </span>
+        <% if product.company.active? %>
+          <span class="label label-success">active</span>
+        <% else %>
+            <span class="label label-danger">not active</span>
+        <% end %>
+
       </div>
   <% end %>
 </div>
